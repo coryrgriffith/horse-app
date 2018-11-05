@@ -29,23 +29,30 @@
 
 <template id="home-page">
   <div class="vue-component">
-
-    <h1>Horses</h1>
-    <a href="#" class="btn btn-primary">Demo Button</a>
-    <div v-for="horse in horses">
-      <p>
-        Horse Name: {{ horse.name }}
-      </p>
-      <p>
-        Horse Breed: {{ horse.breed }}
-      </p>
-      <p>
-        Horse Color: {{ horse.color }}
-      </p>
-      <p>
-        Horse Weight: {{ horse.weight }}
-      </p>
+    <div class="container">
+      <h1>Horses</h1>
+      <div class="card-group">
+        <div v-for="horse in horses" class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h4>
+                Horse Name: {{ horse.name }}
+              </h4>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                Horse Breed: {{ horse.breed }}
+              </p>
+              <p class="card-text">
+                Horse Color: {{ horse.color }}
+              </p>
+              <p class="card-text">
+                Horse Weight: {{ horse.weight }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
   </div>
 </template>
