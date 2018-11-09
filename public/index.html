@@ -27,7 +27,7 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Stables</a>
+            <a class="nav-link" href="/#/horses">Stables</a>
           </li>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -84,6 +84,7 @@
               <p class="card-text">
                 Horse Weight: {{ horse.weight }}
               </p>
+              <a v-bind:href="'/#/horses/' + horse.id" class="btn btn-primary">Got to Horse Page</a>
             </div>
           </div>
         </div>
@@ -96,28 +97,6 @@
   <div class="vue-component">
     <div class="container">
       <h1> {{ message }} </h1>
-      <div class="card-group">
-        <div v-for="horse in horses" class="col-md-6">
-          <div class="card">
-            <div class="card-header">
-              <h4>
-                Horse Name: {{ horse.name }}
-              </h4>
-            </div>
-            <div class="card-body">
-              <p class="card-text">
-                Horse Breed: {{ horse.breed }}
-              </p>
-              <p class="card-text">
-                Horse Color: {{ horse.color }}
-              </p>
-              <p class="card-text">
-                Horse Weight: {{ horse.weight }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </template>
