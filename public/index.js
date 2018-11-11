@@ -34,10 +34,33 @@ var AllHorsesPage = {
   computed: {}
 };
 
+var HorsePage = {
+  template: "#horse-page",
+  data: function() {
+    return {
+      message: "Welcome to Vue.js!",
+      horse: {
+        name: "",
+        breed: "",
+        color: "",
+        weight: ""
+      }
+    };
+  },
+  created: function() {
+    axios.get("/api/horses/" + this.$route.params.id).then(function(response) {
+      this.horse = response.data;
+    }.bind(this));
+  },
+  methods: {},
+  computed: {}
+};
+
 var router = new VueRouter({
   routes: [
     { path: "/", component: HomePage },
-    { path: "/horses", component: AllHorsesPage }
+    { path: "/horses", component: AllHorsesPage },
+    { path: "/horses/:id", component: HorsePage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
