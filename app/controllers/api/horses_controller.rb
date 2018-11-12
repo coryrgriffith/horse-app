@@ -12,10 +12,10 @@ class Api::HorsesController < ApplicationController
 
   def create
     @horse = Horse.new(
-      name: params[:input_name],
-      breed: params[:input_breed],
-      color: params[:input_color],
-      weight: params[:input_weight]
+      name: params[:name],
+      breed: params[:breed],
+      color: params[:color],
+      weight: params[:weight]
     )
     @horse.save
     render "show.json.jbuilder"
@@ -24,10 +24,10 @@ class Api::HorsesController < ApplicationController
   def update
     horse_id = params[:id]
     @horse = Horse.find_by(id: horse_id)
-    @horse.name = params[:input_name] || @horse.name
-    @horse.breed = params[:input_breed] || @horse.breed
-    @horse.color = params[:input_color] || @horse.color
-    @horse.weight = params[:input_weight] || @horse.weight
+    @horse.name = params[:name] || @horse.name
+    @horse.breed = params[:breed] || @horse.breed
+    @horse.color = params[:color] || @horse.color
+    @horse.weight = params[:weight] || @horse.weight
     @horse.save
     render "show.json.jbuilder"
   end

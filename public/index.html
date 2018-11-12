@@ -29,6 +29,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/#/horses">Stables</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#/horses/new">Add Horse to Stable</a>
+          </li>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Dropdown
@@ -124,6 +127,33 @@
   <div class="vue-component">
     <div class="container">
       <h1> {{ message }} </h1>
+    </div>
+  </div>
+</template>
+
+<template id="new-horse-page">
+  <div class="vue-component">
+    <div class="container">
+      <form>
+        <div class="form-group">
+          <label for="new-horse-name-page">Name</label>
+          <input type="text" class="form-control" id="new-horse-name-page" aria-describedby="nameHelp" placeholder="Enter Name" v-model="name">
+          <small id="nameHelp" class="form-text text-muted">Enter the name of your horse.</small>
+        </div>
+        <div class="form-group">
+          <label for="new-horse-breed-page">Breed</label>
+          <input type="text" class="form-control" id="new-horse-breed-page" placeholder="Enter the Breed of Your Horse" v-model="breed">
+        </div>
+        <div class="form-group">
+          <label for="new-horse-color-page">Color</label>
+          <input type="text" class="form-control" id="new-horse-color-page" placeholder="Enter the Color of Your Horse" v-model="color">
+        </div>
+        <div class="form-group">
+          <label for="new-horse-weight-page">Weight</label>
+          <input type="text" class="form-control" id="new-horse-weight-page" placeholder="Enter the Weight of Your Horse" v-model="weight">
+        </div>
+        <button v-on:click="submit()" class="btn btn-primary">Create New Horse</button>
+      </form>
     </div>
   </div>
 </template>
